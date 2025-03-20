@@ -1,18 +1,15 @@
-const modals = document.getElementById("modal")
-const button = document.getElementById("callBtn")
-const closeButton = document.querySelector("#closeBtn")
+import { loadHeaderFooter } from "./utils.mjs";
 
-
+const modals = document.getElementById("modal");
+const button = document.getElementById("callBtn");
+const closeButton = document.querySelector("#closeBtn");
 
 button.addEventListener("click", () => {
-    modals.style.display = "block";
-})
+  modals.style.display = "block";
+});
 
 closeButton.addEventListener("click", () => {
-    modals.style.display = "none";
-}
-)
+  modals.style.display = "none";
+});
 
-
-
-
+loadHeaderFooter();
