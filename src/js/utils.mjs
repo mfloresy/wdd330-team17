@@ -25,7 +25,7 @@ export function setClick(selector, callback) {
 export function getParam(param) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get("product")
+  return urlParams.get(param);  // Use the param argument instead
 }
 
 export function renderListWithTemplate(
