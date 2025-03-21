@@ -1,7 +1,11 @@
-import { getLocalStorage, setLocalStorage, getParam, loadHeaderFooter } from "./utils.mjs";
+import {
+  getLocalStorage,
+  setLocalStorage,
+  getParam,
+  loadHeaderFooter,
+} from "./utils.mjs";
 import ProductData from "./ProductData.mjs";
 import ProductDetails from "./ProductDetails.mjs";
-
 
 loadHeaderFooter();
 
@@ -11,13 +15,22 @@ const productID = getParam("product");
 const products = new ProductDetails(productID, dataSource);
 products.init();
 
-
 function addProductToCart(product) {
   let cartItems = getLocalStorage("so-cart");
   if (!Array.isArray(cartItems)) {
     cartItems = [];
   }
-  cartItems.push(product);
+  product.Quantity = 1;
+
+  const existingProductIndex = cartItems.findIndex(
+    (item) => item.Id === product.Id,
+  );
+
+  if (existingProductIndex >= 0) {
+    cartItems[existingProductIndex].Quantity += 1;
+  } else {
+    cartItems.push(product);
+  }
   setLocalStorage("so-cart", cartItems);
 }
 
