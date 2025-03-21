@@ -1,5 +1,6 @@
 import { loadHeaderFooter } from "./utils.mjs";
 
+
 const modals = document.getElementById("modal");
 const button = document.getElementById("callBtn");
 const closeButton = document.querySelector("#closeBtn");
@@ -13,3 +14,4 @@ closeButton.addEventListener("click", () => {
 });
 
 loadHeaderFooter();
+
