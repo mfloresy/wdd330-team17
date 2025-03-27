@@ -26,7 +26,7 @@ function packageItems(items) {
   return simplifiedItems;
 }
 
-export default class CheckoutProcess {
+export class CheckoutProcess {
   constructor(key, outputSelector) {
     this.key = key;
     this.outputSelector = outputSelector;

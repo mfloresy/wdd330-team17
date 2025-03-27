@@ -1,6 +1,7 @@
 import { getLocalStorage, setLocalStorage, getParam } from "./utils.mjs";
 import ExternalServices from "./ExternalServices.mjs";
 import { loadHeaderFooter } from "./utils.mjs";
+import { animateCartIcon } from "./utils.mjs";
 
 loadHeaderFooter();
 
@@ -13,6 +14,7 @@ function addProductToCart(product) {
   }
   cartItems.push(product);
   setLocalStorage("so-cart", cartItems);
+  animateCartIcon();
 }
 
 // add to cart button event handler

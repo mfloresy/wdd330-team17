@@ -288,6 +288,15 @@ label {
   align-items: center;
 }
 
+@keyframes bounce-cart {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+.cart-icon-bounce {
+  animation: bounce-cart 0.5s ease-in-out;
+}
+
 @media screen and (min-width: 500px) {
   body {
     max-width: 1080px;

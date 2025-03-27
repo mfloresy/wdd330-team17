@@ -67,3 +67,15 @@ export async function loadHeaderFooter() {
   renderWithTemplate(headerTemplate, headerElement);
   renderWithTemplate(footerTemplate, footerElement);
 }
+
+export function animateCartIcon() {
+  const cartIcon = document.querySelector(".cart svg");
+  
+  if (cartIcon) {
+    cartIcon.classList.add("cart-icon-bounce");
+    
+    setTimeout(() => {
+      cartIcon.classList.remove("cart-icon-bounce");
+    }, 500);
+  }
+}
